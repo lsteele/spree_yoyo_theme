@@ -1,0 +1,55 @@
+<% content_for :page_title do %>
+<%= Spree.t(:current_orders) %>
+<% end %>
+
+<% if @orders.any? %>
+<table class="index responsive" id="listing_orders" data-hook>
+
+	<thread>
+		<tr role="row" data-hook="admin_orders_index_headers">
+			<th role="columnheader" class="center" rowspan="1" colspan="1">
+			</th>
+
+			<th>Order Number</th>
+
+			<th>Placed At</th>
+
+			<th>Payment State</th>
+
+			<th>Order Progress</th>
+			<th>Email</th>
+			<th>Total</th>
+			<th data-hook="admin_orders_index_header_actions" class="actions"></th>
+		</tr>
+	</thread>
+	<tbody id="ajax-reload">
+		<%= render :partial => 'spree/admin/shared/order', :collection => @orders %>
+	
+	</tbody>
+</table>
+<% else %>
+<div class="alpha twelve columns no-objects-found">
+	<%= Spree.t(:no_resource_found, resource: I18n.t(:other, scope: 'activerecord.models.spree/order')) %>,
+	<%= link_to Spree.t(:add_one), spree.new_admin_order_path %>!
+</div>
+<% end %>
+
+<script>
+	$(function(){
+		setTimeout(updateOrders, 10000)
+	});
+
+	function updateOrders()
+	{
+		var after = $("#ajax-reload tr.table-row:last").attr("data-time");
+		$.getScript("kitchens.js?&after=" + after )
+		setTimeout(updateOrders, 10000)
+	}
+
+	 $('.expand-details').click(function(){
+	$(this).find('.plus-minus').text(function(_, value){return value=='-'?'+':'-'});
+	$(this).parent().nextUntil('.table-row').slideToggle(50, function(){
+	});
+});
+	
+</script>
