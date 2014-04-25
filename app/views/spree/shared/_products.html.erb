@@ -16,6 +16,7 @@ paginated_products ||= products
 <% end %>
 
 <% if products.any? %>
+
 <ul id="products" class="inline product-listing" data-hook>
 	<% products.each do |product| %>
 
@@ -28,8 +29,13 @@ paginated_products ||= products
 				<%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
 
 				<row>
+
 					<div class="col-md-6">
-						<span class="price selling" itemprop="price"><%= display_price(product) %></span>
+						<div>
+							<span class="price">
+								<%= display_price(product) %>
+							</span>
+						</div>
 					</div>
 					<div class="col-md-6">
 						-<%= number_field_tag (product.variants_and_option_values.any? ? :quantity : "variants[#{product.master.id}]"),
