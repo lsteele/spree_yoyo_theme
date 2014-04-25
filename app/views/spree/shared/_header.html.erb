@@ -13,7 +13,7 @@
 
 				<div class="col-md-8">
 					<ul class="homepage-menu">
-						<li class="contact"> <a href="">CONTACT</a></li>
+						<li class="contact"> <%= link_to "Contact",'/contact' %></li>
 
 						<% if spree_current_user %>
 						<li class="contact">WELCOME BACK</li>
@@ -22,7 +22,7 @@
 						<li class="signin"><%= link_to Spree.t(:LOGOUT), spree.logout_path %></li>
 
 						<% else %>
-						<li class="join"><a href="">JOIN</a></li>
+						<li class="join"><a href=""><%= link_to "JOIN",spree.signup_path %></a></li>
 						<li class="signin"><a href=""><%= link_to "SIGN IN",spree.login_path %></a></li>
 						<% end %>
 					</ul>
