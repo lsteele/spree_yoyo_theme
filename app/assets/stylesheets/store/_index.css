@@ -92,6 +92,7 @@
 	border-radius: 10px;
 	background-color: rgba(255,255,255,0.6);
 	padding:2px 15px 5px 15px;
+	color:#FFF !important;
 }
 
 #login h3
