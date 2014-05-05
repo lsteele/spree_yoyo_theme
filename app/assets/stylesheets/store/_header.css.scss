@@ -4,6 +4,10 @@
 
 .homepage-header 
 {
+  a
+  {
+    color:white !important;
+  }
   #logo
   {
     transform:rotate(-3deg);
@@ -57,7 +61,7 @@
         
         a
         {
-          color:#EE6557;
+          color:#EE6557 !important;
           text-decoration: none;
         }
       }
@@ -72,7 +76,7 @@
 
       a:link,a:visited
       {
-        color:black;
+        color:black !important;
         padding-top:3px;
       }
 
@@ -167,6 +171,10 @@
 
 .header
 {
+  a
+  {
+    color:white !important;
+  }
   background-image: url("http://s14.postimg.org/skdq5vavl/search_bg_top.png");
   height:120px;
   background-repeat: no-repeat;

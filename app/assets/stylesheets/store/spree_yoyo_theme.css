@@ -143,6 +143,7 @@ h5
   text-decoration: underline;
   font-size: 16px;
   color: #83828A;
+  font-weight: normal !important;
 }
 
 #recently_viewed ul,#taxon-crumbs ul,#product-description ul
@@ -286,6 +287,11 @@ span.price, #checkout-summary table tr[data-hook="item_total"] td:last-child str
 
 input[type="submit"], input[type="button"], input[type="reset"], button, a.button {
   font-weight: normal !important;
-   color: #428BCA !important;
+  
   text-decoration: none;
+}
+
+a
+{
+ color: #428BCA !important;
 }
