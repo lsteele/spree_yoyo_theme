@@ -32,17 +32,16 @@
 					<th class="order-date">
 					 <%= Spree.t(:order_date) %>
 					</th>
-					<th class=""></th>
 					<th class="order-total">
 					<%= Spree.t(:total) %>
 					</th>
+					<th> </th>
 				</tr>
 			</thead>
 			<tbody>
 				<% @orders.each do |order| %>
 				<tr class="orderhead">
 					<td class="order-date"><%= order.completed_at.to_time%></td>
-					<td class=""></td>
 					<td class="order-total"><%= order.display_total %></td>
 					 <td class="repeat-order">
 			          <%= form_tag repeat_order_path(order.number), method: :post do %>

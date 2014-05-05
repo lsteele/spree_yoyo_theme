@@ -42,8 +42,9 @@ body
 }
 
 h1 {
-  font-size: 60px;
-  margin-bottom: 30px;
+  margin:0 0 0 0 !important;
+  padding-top: 3px;
+  font-size: 20px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
@@ -70,11 +71,17 @@ h3
 #products li .info
 {
   height:50px !important;
+  vertical-align: center;
   font-size:16px !important;
+  color: #428BCA !important;
+  font-family: 'Open Sans',sans-serif !important;
+  font-weight: normal !important;
 }
 #products li .price
 {
-  font-size:13px !important;
+  font-size:15px !important;
+  color:black !important;
+  font-weight: normal !important;
 }
 
 #products li .cart_field
@@ -102,4 +109,164 @@ h3
 .addCart
 {
   display:inline !important;
+}
+
+.product-title
+{
+  text-align: left;
+  width:90%;
+}
+
+.product_price
+{
+  color:#81C02F;
+  float: right;
+}
+
+.product-section-title
+{
+  text-transform:capitalize !important;
+}
+
+.diff
+{
+  color:#81C02F !important;
+}
+
+#recently_viewed h6,#taxon-crumbs h6,#product-description h6,#reviews h6
+{
+  text-decoration: underline;
+  font-size: 16px;
+  color: #83828A;
+}
+
+#recently_viewed ul,#taxon-crumbs ul,#product-description ul
+{
+  list-style: none;
+}
+
+.variant-description
+{
+  font-weight: normal !important;
+}
+
+#reviews .button,#update-button,#checkout-link,#clear_cart_link input, #clear_cart_link a, .form-buttons input
+{
+  background-color: #81C02F !important;
+  border: none !important;
+  border-radius: 5px !important;
+  color: #FFFFFF !important;
+}
+
+#clear_cart_link input
+{
+  margin-right:5px;
+}
+#clear_cart_link a
+{
+  margin-left:5px;
+}
+
+#update-button
+{
+  margin-right:5px;
+}
+
+#order_coupon_code
+{
+  margin-right:5px;
+}
+
+.ratings
+{
+  margin-top:5px;
+  margin-bottom:20px;
+  border-bottom: 1px dashed #2222AA;
+}
+
+.ratings p
+{
+  margin-top:1px !important;
+  padding-top: 1px !important;
+  margin-bottom: 1px !important;
+  padding-bottom: 1px !important;
+}
+
+.order-align {
+
+font-size: 15px;
+text-align: center !important;
+
+}
+
+#order_summary legend{
+color:#81C02F !important;
+}
+
+
+span.price, #checkout-summary table tr[data-hook="item_total"] td:last-child strong, #checkout-summary table #summary-order-total, #order_details td.price span, #order_details td.total span, #order_summary td.price span, #order_summary td.total span, table#cart-detail tbody#line_items tr td[data-hook="cart_item_price"], table#cart-detail tbody#line_items tr td[data-hook="cart_item_total"], div[data-hook="inside_cart_form"] #subtotal span.order-total {
+color: #81C02F !important;
+font-weight: normal; !important;
+}
+
+
+#order {
+font-size: 13px !important;
+}
+
+.total{
+font-size:13px!important;
+font-weight: bold !important;
+}
+
+#order_total
+{    
+  font-weight: bold !important;
+}
+#billing legend, #shipping legend, #shipping_method legend, #payment legend, #order_details legend, #order_summary legend 
+{
+  padding:0px !important;
+  text-transform: capitalize !important;
+  color:#81C02F !important;
+}
+
+.select_address label,.inner label
+{
+  font-weight: normal !important;
+}
+
+#checkout-summary
+{
+  margin-top:30px;
+}
+
+#checkout-summary h3
+{
+  color:black;
+  padding-bottom: 5px;
+  margin-top:5px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.progress-steps li
+{
+  text-transform: capitalize !important;
+  font-weight: normal !important;
+}
+
+.progress-steps .current-first,.progress-steps .current
+{
+  background-color: #81C02F !important;
+}
+
+.stock-location
+{
+  display: none;
+}
+
+.order-status
+{
+    color: #81C02F !important;
+    font-weight: bold;
 }

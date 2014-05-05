@@ -1,1 +1,6 @@
-$('.order-status').html("<%= @order_status %>")
+$('.order-status').html("<% case @order.order_progress %>
+        <% when 0 %>
+        Order Placed
+        <% when 1 %>
+        Cooking
+      <% end %>")
