@@ -156,7 +156,7 @@ h5
   font-weight: normal !important;
 }
 
-#reviews .button,#update-button,#checkout-link,#clear_cart_link input, #clear_cart_link a, .form-buttons input
+#reviews .button,#update-button,#checkout-link,#clear_cart_link input, #clear_cart_link a, .form-buttons input, .continue
 {
   background-color: #81C02F !important;
   border: none !important;
