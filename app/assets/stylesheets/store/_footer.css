@@ -54,6 +54,7 @@
 {
   color: black; 
   border-bottom:1px solid #6A6A65;
+  border-top:1px solid #6A6A65;
   .h3
   {
     font-family: 'ClassicRoundMedium';
