@@ -53,8 +53,8 @@ module Spree
 		private
 
 		def sendSMS
-			account_sid = 'AC51ac0776450dff50c545190746f6479a'
-			auth_token = '6bcfc0abec0456ff27b58238a31827c8'
+			account_sid = 'AC8ae28ecab4ddf3d581aeb486ecc6ee07'
+			auth_token = '7a39e944c63c6d54495b923cb9ede5c2'
 
 			# set up a client to talk to the Twilio REST API
 			@client = Twilio::REST::Client.new account_sid, auth_token
@@ -92,7 +92,7 @@ module Spree
 			body = "Name: #{name} \nEmail: #{email} \nPhone: #{phone} \nPaid at:#{paidat} Shipment:#{shipstate} \n#{shipadd} \nTo Pay: #{outstandingbalance} \n #{order_items}"
 
 			@client.account.messages.create(
-				:from => '+441256830281',
+				:from => '+441934446005',
 				:to => '+447534782290',
 				:body => body
 				)
