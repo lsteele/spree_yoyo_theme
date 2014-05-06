@@ -23,7 +23,7 @@
       <%= breadcrumbs(@taxon) %>
 
 
-      <% if current_page?(products_url) or request.request_uri.to_s.match(/\/t\//) %>
+      <% if current_page?(products_url)%>
         <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
       <% end %>
 
