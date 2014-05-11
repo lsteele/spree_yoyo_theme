@@ -8,7 +8,7 @@ module Spree
       respond_to :html
 
       def index
-        @orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i + 1),"complete")
+        @orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i + 1) - 3599,"complete")
       end
 
       def show
