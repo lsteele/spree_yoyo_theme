@@ -4,6 +4,7 @@ Spree::Core::Engine.routes.draw do
 		resources :kitchens do
 			member do
 				post :inc_progress
+				get :show
 			end
 		end
 	end
