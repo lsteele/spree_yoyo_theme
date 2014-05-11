@@ -17,9 +17,10 @@ module Spree
         #@orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i  - 4000),"complete")
         respond_to do |format|
          format.js {}
+         format.html {render :partial => 'spree/admin/shared/order'}
        end
      end
-     
+
      def new
       @order = Order.create
       @order.created_by = try_spree_current_user
