@@ -5,6 +5,8 @@ module Spree
       before_filter :initialize_order_events
       before_filter :load_order, :only => [:edit, :update, :cancel, :resume, :approve, :resend, :open_adjustments, :close_adjustments]
 
+      ssl_required :show
+
       respond_to :html
 
       def index
