@@ -15,30 +15,33 @@ module Spree
       def show
         @orders = Order.where(order_progress:0)
         #@orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i  - 4000),"complete")
-      end
-      
-      def new
-        @order = Order.create
-        @order.created_by = try_spree_current_user
-        @order.save
-        redirect_to edit_admin_order_url(@order)
-      end
-
-      def edit
-        unless @order.complete?
-          @order.refresh_shipment_rates
-        end
-      end
-
-      def inc_progress
-        @order = Order.find(params[:id])
-        @order.order_progress += 1
-        @order.save
-
-        @orders = Order.where(order_progress:0)
-
         respond_to do |format|
-          format.js {}
+         format.js {}
+       end
+     end
+     
+     def new
+      @order = Order.create
+      @order.created_by = try_spree_current_user
+      @order.save
+      redirect_to edit_admin_order_url(@order)
+    end
+
+    def edit
+      unless @order.complete?
+        @order.refresh_shipment_rates
+      end
+    end
+
+    def inc_progress
+      @order = Order.find(params[:id])
+      @order.order_progress += 1
+      @order.save
+
+      @orders = Order.where(order_progress:0)
+
+      respond_to do |format|
+        format.js {}
           #format.html {render :layout => false}
         end
       end
