@@ -8,13 +8,15 @@ module Spree
       ssl_required :show
 
       respond_to :html
+      respond_to :js
+
 
       def index
-        @orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i - 4000),"complete")
+        @orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i)+4,"complete")
       end
 
       def show
-        @orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i - 4000),"complete")
+        @orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i)+4,"complete")
       end
       
       def new
