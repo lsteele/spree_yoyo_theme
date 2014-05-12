@@ -12,11 +12,11 @@ module Spree
 
 
       def index
-        @orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i)+3601,"complete")
+        @orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i)+1,"complete")
       end
 
       def show
-        @orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i)+3601,"complete")
+        @orders = Order.where("order_progress = ? and created_at > ? and state = ?",0,Time.at(params[:after].to_i)+1,"complete")
       end
       
       def new
