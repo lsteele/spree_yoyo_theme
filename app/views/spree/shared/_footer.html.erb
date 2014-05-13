@@ -6,9 +6,27 @@
       <div class = "col-md-3 footer-padder">
         <div class="footerh3">FIND US</div class ="footerh3">
          <div class="gmaps">
-          <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyA3a3922x9T1CZwTmREE6Nc51k2lGZGtrE&sensor=false"></script>
-          <script ptype="text/javascript" src="//www.map-generator.org/map/iframejs/422ec153-b462-4aea-93dd-05cf1ab57b88?key=AIzaSyA3a3922x9T1CZwTmREE6Nc51k2lGZGtrE&width=225px&height=107px"></script>
-          <div id ="mapid-422ec153-b462-4aea-93dd-05cf1ab57b88"></div>
+             <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+            <script>
+              function initialize() {
+                var map_canvas = document.getElementById('map_canvas');
+                var pos=new google.maps.LatLng(51.455783, -2.607724);
+                var map_options = {
+                  center:pos ,
+                  zoom: 15,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(map_canvas, map_options)
+                var marker = new google.maps.Marker({
+                  position: pos,
+                  map: map,
+              });
+                marker.setMap(map);
+              }
+              google.maps.event.addDomListener(window, 'load', initialize);
+            </script>
+
+          <div id="map_canvas" style="width: 225px; height: 107px;"></div>
         </div>
       </div>
 
