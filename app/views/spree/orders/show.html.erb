@@ -3,12 +3,15 @@
   <fieldset id="order_summary" data-hook>
 
     <p class="order-align"> Current Order Status: <span class="order-status">
-      <% case @order.order_progress %>
-        <% when 0 %>
-        Order Placed
-        <% when 1 %>
-        Cooking
-      <% end %>
+
+
+        <% case @order.order_progress
+        when 0 %>
+         Order Placed 
+        <% else %>
+         Cooking 
+         <% end %>
+
       </span>
     </p>
 
@@ -33,18 +36,17 @@
       </p>
     </div>
   </fieldset>
-
 </div>
 
 <script>
 $(function(){
-  setTimeout(updateOrders, 30000)
+  setTimeout(updateOrders, 10000)
 });
 
 function updateOrders()
 {
   $.getScript("../orders.js?id=" + <%= @order.id %>)
-  setTimeout(updateOrders, 30000)
+  setTimeout(updateOrders, 10000)
 }
 
 </script>

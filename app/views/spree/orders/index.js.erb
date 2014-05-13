@@ -1,6 +1,2 @@
-$('.order-status').html("<% case @order.order_progress %>
-        <% when 0 %>
-        Order Placed
-        <% when 1 %>
-        Cooking
-      <% end %>")
+$('.order-status').html("<%= escape_javascript render :partial => 'spree/orders/order_placed', :locals => { order_progress: @order_status } %>");
+

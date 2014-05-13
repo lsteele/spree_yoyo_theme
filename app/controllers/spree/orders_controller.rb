@@ -7,9 +7,11 @@ module Spree
     helper 'spree/products', 'spree/orders'
 
     respond_to :html
+    respond_to :js
 
     def show
       @order = Order.find_by_number!(params[:id])
+
     end
 
     def update
@@ -43,6 +45,7 @@ module Spree
 
     def index
       @order_status = Order.find(params[:id]).order_progress
+     
     end
 
     # Shows the current incomplete order from the session
